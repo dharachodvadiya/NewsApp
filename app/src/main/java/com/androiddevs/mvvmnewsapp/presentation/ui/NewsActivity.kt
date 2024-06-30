@@ -1,4 +1,4 @@
-package com.androiddevs.mvvmnewsapp.ui
+package com.androiddevs.mvvmnewsapp.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,13 +18,6 @@ class NewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
-
-        // Obtain reference to the NavHostFragment
-       // val navHostFragment = supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as NavHostFragment
-        // Get the NavController
-        //navController = navHostFragment.navController
-        // Set up the ActionBar with the Navigation UI
-        //setupActionBarWithNavController(navController)
 
         bottomNavigationView.setupWithNavController(newsNavHostFragment.findNavController())
     }
