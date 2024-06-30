@@ -2,6 +2,7 @@ package com.androiddevs.mvvmnewsapp
 
 import android.util.Log
 import com.androiddevs.mvvmnewsapp.data.api.NewsApi
+import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
 import com.androiddevs.mvvmnewsapp.repository.NewsRepository
 import com.androiddevs.mvvmnewsapp.repository.NewsRepositoryImpl
 import com.androiddevs.mvvmnewsapp.util.Constant
@@ -32,7 +33,8 @@ object AppModule {
             .create(NewsApi::class.java)
     }
 
-    fun provideNewsRepository(api: NewsApi): NewsRepository {
-        return NewsRepositoryImpl(api)
+    fun provideNewsRepository(api: NewsApi, db: ArticleDatabase): NewsRepository {
+        return NewsRepositoryImpl(api, db)
     }
+
 }

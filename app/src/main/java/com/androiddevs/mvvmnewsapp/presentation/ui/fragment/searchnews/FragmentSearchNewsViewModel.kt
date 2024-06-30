@@ -25,7 +25,7 @@ class FragmentSearchNewsViewModel (private val newsRepo: NewsRepository) : ViewM
         viewModelScope.launch{
             val response : Response<NewsResponse> =  newsRepo.searchNews(searchQuery, newsPage)
             //safeSearchNewsCall(searchQuery)
-            Log.d("aaa search news" , response.body().toString())
+            Log.d("aaa search news" , searchNews.value?.data.toString())
         }
     }
 
@@ -52,13 +52,4 @@ class FragmentSearchNewsViewModel (private val newsRepo: NewsRepository) : ViewM
         return Resource.Error(response.message())
     }
 
-}
-
-class SearchNewsViewModelProviderFactory(
-    private val newsRepository: NewsRepository
-) : ViewModelProvider.Factory {
-
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return FragmentSearchNewsViewModel(newsRepository) as T
-    }
 }

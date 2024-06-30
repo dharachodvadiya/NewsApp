@@ -26,9 +26,9 @@ class FragmentBreakingNewsViewModel(private val newsRepo: NewsRepository) : View
     {
 
         viewModelScope.launch{
-            val response : Response<NewsResponse> = newsRepo.getBreakingNews("us", newsPage)
-            //safeBreakingNewsCall(countryCode)
-            Log.d("aaa Breaking news" , response.body().toString())
+            //val response : Response<NewsResponse> = newsRepo.getBreakingNews("us", newsPage)
+            safeBreakingNewsCall(countryCode)
+            Log.d("aaa Breaking news" , breakingNews.value?.data.toString())
         }
 
     }
@@ -56,13 +56,3 @@ class FragmentBreakingNewsViewModel(private val newsRepo: NewsRepository) : View
     }
 
 }
-/*
-
-class NewsViewModelProviderFactory(
-    private val newsRepository: NewsRepository
-) : ViewModelProvider.Factory {
-
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return FragmentBreakingNewsViewModel(newsRepository) as T
-    }
-}*/
