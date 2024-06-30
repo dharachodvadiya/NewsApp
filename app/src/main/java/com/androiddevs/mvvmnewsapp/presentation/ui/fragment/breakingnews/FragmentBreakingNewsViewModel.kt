@@ -17,12 +17,13 @@ class FragmentBreakingNewsViewModel(private val newsRepo: NewsRepository) : View
 
     val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var newsPage = 1
+    var breakingNewsResponse: NewsResponse? = null
 
     init {
         getBreakingNews("us")
     }
 
-    private fun getBreakingNews(countryCode: String)
+    fun getBreakingNews(countryCode: String)
     {
 
         viewModelScope.launch{
@@ -48,10 +49,20 @@ class FragmentBreakingNewsViewModel(private val newsRepo: NewsRepository) : View
     private fun handleBreakingNewsResponse(response: Response<NewsResponse>) : Resource<NewsResponse> {
         if(response.isSuccessful) {
             response.body()?.let { resultResponse ->
+
+                newsPage++
+                if(breakingNewsResponse == null) {
+                    breakingNewsResponse = resultResponse
+                } else {
+                    val oldArticles = breakingNewsResponse?.articles
+                    val newArticles = resultResponse.articles
+                    oldArticles?.addAll(newArticles)
+                }
                 return  Resource.Success(resultResponse)
             }
         }
         return Resource.Error(response.message())
     }
+
 
 }

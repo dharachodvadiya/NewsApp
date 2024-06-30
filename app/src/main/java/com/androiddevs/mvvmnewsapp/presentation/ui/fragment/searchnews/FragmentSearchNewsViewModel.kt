@@ -16,6 +16,9 @@ class FragmentSearchNewsViewModel (private val newsRepo: NewsRepository) : ViewM
 
     val searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var newsPage = 1
+    var searchNewsResponse: NewsResponse? = null
+    var newSearchQuery:String? = null
+    var oldSearchQuery:String? = null
 
     fun searchNews(searchQuery: String)
     {
@@ -41,7 +44,16 @@ class FragmentSearchNewsViewModel (private val newsRepo: NewsRepository) : ViewM
     private fun handleSearchNewsResponse(response: Response<NewsResponse>) : Resource<NewsResponse> {
         if(response.isSuccessful) {
             response.body()?.let { resultResponse ->
-
+                if(searchNewsResponse == null || newSearchQuery != oldSearchQuery) {
+                    newsPage = 1
+                    oldSearchQuery = newSearchQuery
+                    searchNewsResponse = resultResponse
+                } else {
+                    newsPage++
+                    val oldArticles = searchNewsResponse?.articles
+                    val newArticles = resultResponse.articles
+                    oldArticles?.addAll(newArticles)
+                }
                 return Resource.Success(resultResponse)
             }
         }
