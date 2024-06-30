@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.androiddevs.mvvmnewsapp.AppModule
 import com.androiddevs.mvvmnewsapp.MyApplication
 import com.androiddevs.mvvmnewsapp.R
+import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.ViewModelfactory
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.breakingnews.FragmentBreakingNewsViewModel
 
@@ -16,7 +17,7 @@ class FragmentSearchNews : Fragment(R.layout.fragment_search_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModelProviderFactory = ViewModelfactory(AppModule.provideNewsRepository(AppModule.provideNewsApi() , MyApplication().dataBase))
+        val viewModelProviderFactory = ViewModelfactory(AppModule.provideNewsRepository(AppModule.provideNewsApi() , AppModule.provideDatabase(activity!!.baseContext)))
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(FragmentSearchNewsViewModel::class.java)
 
     }

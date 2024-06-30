@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentSavedNews2"
-        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.FragmentSavedNews"
+        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.savednews.FragmentSavedNews"
         android:label="FragmentSavedNews" >
         <action
             android:id="@+id/action_fragmentSavedNews2_to_fragmentArticle"
@@ -30,6 +30,10 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentArticle"
-        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.FragmentArticle"
-        android:label="FragmentArticle" />
+        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.article.FragmentArticle"
+        android:label="FragmentArticle" >
+        <argument
+            android:name="article"
+            app:argType="com.androiddevs.mvvmnewsapp.data.model.Article" />
+    </fragment>
 </navigation>

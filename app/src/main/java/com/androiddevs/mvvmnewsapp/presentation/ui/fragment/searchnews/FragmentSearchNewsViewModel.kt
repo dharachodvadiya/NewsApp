@@ -25,7 +25,6 @@ class FragmentSearchNewsViewModel (private val newsRepo: NewsRepository) : ViewM
         viewModelScope.launch{
             val response : Response<NewsResponse> =  newsRepo.searchNews(searchQuery, newsPage)
             //safeSearchNewsCall(searchQuery)
-            Log.d("aaa search news" , searchNews.value?.data.toString())
         }
     }
 

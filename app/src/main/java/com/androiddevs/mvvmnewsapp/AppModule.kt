@@ -1,5 +1,6 @@
 package com.androiddevs.mvvmnewsapp
 
+import android.content.Context
 import android.util.Log
 import com.androiddevs.mvvmnewsapp.data.api.NewsApi
 import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
@@ -35,6 +36,10 @@ object AppModule {
 
     fun provideNewsRepository(api: NewsApi, db: ArticleDatabase): NewsRepository {
         return NewsRepositoryImpl(api, db)
+    }
+
+    fun provideDatabase(context: Context) : ArticleDatabase{
+        return ArticleDatabase(context)
     }
 
 }

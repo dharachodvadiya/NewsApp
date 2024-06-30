@@ -28,7 +28,6 @@ class FragmentBreakingNewsViewModel(private val newsRepo: NewsRepository) : View
         viewModelScope.launch{
             //val response : Response<NewsResponse> = newsRepo.getBreakingNews("us", newsPage)
             safeBreakingNewsCall(countryCode)
-            Log.d("aaa Breaking news" , breakingNews.value?.data.toString())
         }
 
     }

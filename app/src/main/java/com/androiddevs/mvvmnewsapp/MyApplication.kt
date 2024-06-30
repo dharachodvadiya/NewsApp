@@ -5,5 +5,5 @@ import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
 
 class MyApplication : Application() {
 
-    val dataBase by lazy { ArticleDatabase(this) }
+   // val dataBase by lazy { ArticleDatabase(this) }
 }
