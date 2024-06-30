@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fragmentSearchNews2"
-        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.FragmentSearchNews"
+        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.searchnews.FragmentSearchNews"
         android:label="FragmentSearchNews" >
         <action
             android:id="@+id/action_fragmentSearchNews2_to_fragmentArticle"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentBreakingNews2"
-        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.breakingNews.FragmentBreakingNews"
+        android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragment.breakingnews.FragmentBreakingNews"
         android:label="FragmentBreakingNews" >
         <action
             android:id="@+id/action_fragmentBreakingNews2_to_fragmentArticle"
