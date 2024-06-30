@@ -17,14 +17,11 @@ class FragmentSearchNewsViewModel (private val newsRepo: NewsRepository) : ViewM
     val searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var newsPage = 1
 
-    init {
-        searchNews("india")
-    }
-    private fun searchNews(searchQuery: String)
+    fun searchNews(searchQuery: String)
     {
         viewModelScope.launch{
-            val response : Response<NewsResponse> =  newsRepo.searchNews(searchQuery, newsPage)
-            //safeSearchNewsCall(searchQuery)
+            //val response : Response<NewsResponse> =  newsRepo.searchNews(searchQuery, newsPage)
+            safeSearchNewsCall(searchQuery)
         }
     }
 
