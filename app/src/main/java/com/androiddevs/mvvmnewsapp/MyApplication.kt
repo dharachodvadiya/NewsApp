@@ -1,9 +1,16 @@
 package com.androiddevs.mvvmnewsapp
 
 import android.app.Application
-import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
 
 class MyApplication : Application() {
 
-   // val dataBase by lazy { ArticleDatabase(this) }
+    override fun onCreate() {
+        super.onCreate()
+        instance = this
+    }
+
+    companion object {
+        lateinit var instance: MyApplication
+            private set
+    }
 }
