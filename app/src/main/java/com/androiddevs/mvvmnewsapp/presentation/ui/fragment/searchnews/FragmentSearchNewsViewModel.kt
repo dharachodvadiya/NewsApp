@@ -1,9 +1,7 @@
 package com.androiddevs.mvvmnewsapp.presentation.ui.fragment.searchnews
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.androiddevs.mvvmnewsapp.data.model.NewsResponse
 import com.androiddevs.mvvmnewsapp.repository.NewsRepository

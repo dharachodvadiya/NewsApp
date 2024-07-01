@@ -36,7 +36,7 @@ object AppModule {
             .build()
             .create(NewsApi::class.java)*/
 
-        return api;
+        return api
     }
 
     fun provideNewsRepository(api: NewsApi, db: ArticleDatabase): NewsRepository {

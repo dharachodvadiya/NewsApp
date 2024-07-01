@@ -2,7 +2,6 @@ package com.androiddevs.mvvmnewsapp.presentation.ui.fragment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.article.FragmentArticle
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.article.FragmentArticleViewModel
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.breakingnews.FragmentBreakingNewsViewModel
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.savednews.FragmentSavedNewsViewModel

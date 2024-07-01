@@ -10,15 +10,10 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androiddevs.mvvmnewsapp.AppModule
-import com.androiddevs.mvvmnewsapp.MyApplication
 import com.androiddevs.mvvmnewsapp.R
-import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
 import com.androiddevs.mvvmnewsapp.presentation.adapter.NewsAdapter
-import com.androiddevs.mvvmnewsapp.presentation.ui.NewsActivity
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.ViewModelfactory
-import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.breakingnews.FragmentBreakingNewsViewModel
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_breaking_news.rvBreakingNews
 import kotlinx.android.synthetic.main.fragment_saved_news.rvSavedNews
 
 class FragmentSavedNews : Fragment(R.layout.fragment_saved_news) {

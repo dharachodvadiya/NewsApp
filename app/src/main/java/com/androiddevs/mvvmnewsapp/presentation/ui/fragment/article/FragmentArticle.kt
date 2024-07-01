@@ -7,11 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.androiddevs.mvvmnewsapp.AppModule
-import com.androiddevs.mvvmnewsapp.MyApplication
 import com.androiddevs.mvvmnewsapp.R
-import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.ViewModelfactory
-import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.breakingnews.FragmentBreakingNewsViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_article.fab
 import kotlinx.android.synthetic.main.fragment_article.webView

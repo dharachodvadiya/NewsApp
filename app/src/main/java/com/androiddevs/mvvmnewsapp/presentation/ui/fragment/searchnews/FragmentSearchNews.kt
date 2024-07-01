@@ -12,12 +12,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androiddevs.mvvmnewsapp.AppModule
-import com.androiddevs.mvvmnewsapp.MyApplication
 import com.androiddevs.mvvmnewsapp.R
-import com.androiddevs.mvvmnewsapp.data.db.ArticleDatabase
 import com.androiddevs.mvvmnewsapp.presentation.adapter.NewsAdapter
 import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.ViewModelfactory
-import com.androiddevs.mvvmnewsapp.presentation.ui.fragment.breakingnews.FragmentBreakingNewsViewModel
 import com.androiddevs.mvvmnewsapp.util.Constant
 import com.androiddevs.mvvmnewsapp.util.Constant.SEARCH_NEWS_TIME_DELAY
 import com.androiddevs.mvvmnewsapp.util.Resource
